@@ -21,9 +21,13 @@ public class Main {
         god.sendPersonSelectionCommandToMafias();
         game.selectCitizenToKill();
 
-        /*
-        god.sendConsiderationCommandToDoctor();
+        god.sendSleepCommandToMafia();
+        game.sleepMafias();
+
+        god.sendWakeUpCommandTODoctor();
         game.wakeUpPlayer(Role.Doctor);
-         */
+
+        god.sendConsiderationCommandToDoctor();
+        game.selectPersonByDoctor();
     }
 }

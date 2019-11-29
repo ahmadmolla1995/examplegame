@@ -32,6 +32,6 @@ public class God {
     }
 
     public void sendConsiderationCommandToDoctor() {
-        System.out.println("");
+        System.out.println("Doctor! Select one person and do your job!");
     }
 }

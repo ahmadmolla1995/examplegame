@@ -61,6 +61,11 @@ public class Game {
         this.selectedPersonToKill = citizens.get((new Random()).nextInt(citizens.size()));
     }
 
+    public void sleepMafias() {
+        for(Mafia m: mafias)
+            m.setAwakeStatus(false);
+    }
+
     public void wakeUpPlayer(Role role) {
         for(Citizen c: citizens) {
             if (c.getRoll() == role) {
@@ -68,5 +73,9 @@ public class Game {
                 return;
             }
         }
+    }
+
+    public void selectPersonByDoctor() {
+
     }
 }
