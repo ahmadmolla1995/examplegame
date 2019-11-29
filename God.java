@@ -19,7 +19,7 @@ public class God {
         System.out.println("Every mafia! wake up!");
     }
 
-    public void sendKillCitizenCommand() {
+    public void sendPersonSelectionCommandToMafias() {
         System.out.println("Select a citizen to kill!");
     }
 

@@ -18,14 +18,12 @@ public class Main {
         god.sendAwakeCommandToMafias();
         game.wakeUpMafias();
 
-        god.sendKillCitizenCommand();
+        god.sendPersonSelectionCommandToMafias();
         game.selectCitizenToKill();
-
 
         /*
         god.sendConsiderationCommandToDoctor();
         game.wakeUpPlayer(Role.Doctor);
-
          */
     }
 }
