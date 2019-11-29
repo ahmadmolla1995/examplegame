@@ -28,7 +28,8 @@ public abstract class Player {
     public void printInfo() {
         System.out.print("id: " + personID + '\t');
         System.out.print("role: " + roll + '\t');
-        System.out.print("awake: " + awake + '\n');
+        System.out.print("awake: " + awake + '\t');
+        System.out.print("isAlive: " + isAlive + '\n');
     }
 
     public void setAwakeStatus(boolean status) {

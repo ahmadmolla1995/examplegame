@@ -6,11 +6,11 @@ public class Game {
     private Time time;
     private ArrayList<Citizen> citizens;
     private ArrayList<Mafia> mafias;
-    private Citizen selectedPersonToKill;
+    private int selectedPersonIDToKill;
 
     public Game() {
-        this.citizens = new ArrayList<Citizen>();
-        this.mafias = new ArrayList<Mafia>();
+        this.citizens = new ArrayList<>();
+        this.mafias = new ArrayList<>();
         this.time = Time.Night;
     }
 
@@ -23,7 +23,6 @@ public class Game {
     }
 
     public void addCitizen(Citizen citizen) {
-        System.out.println("add method");
         this.citizens.add(citizen);
     }
 
@@ -57,8 +56,12 @@ public class Game {
         for(Mafia m: mafias)
             System.out.print(m.getPersonID() + "-");
 
+        Random rand = new Random();
         System.out.println("\n\nEnter citizen ID to kill!");
-        this.selectedPersonToKill = citizens.get((new Random()).nextInt(citizens.size()));
+        int i = rand.nextInt(citizens.size());
+        System.out.println("person id is: " + citizens.get(i).getPersonID());
+
+        this.selectedPersonIDToKill = citizens.get(i).getPersonID();
     }
 
     public void sleepMafias() {
@@ -75,7 +78,17 @@ public class Game {
         }
     }
 
-    public void selectPersonByDoctor() {
+    public void selectPersonIDByDoctor() {
+        Scanner scanner = new Scanner(System.in);
+        int id = scanner.nextInt();
 
+        if(id != selectedPersonIDToKill)
+            killPlayerByID(selectedPersonIDToKill);
+    }
+
+    public void killPlayerByID(int personID) {
+        for(Citizen c: citizens)
+            if(c.getPersonID() == personID)
+                c.setAliveStatus(false);
     }
 }

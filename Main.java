@@ -28,6 +28,6 @@ public class Main {
         game.wakeUpPlayer(Role.Doctor);
 
         god.sendConsiderationCommandToDoctor();
-        game.selectPersonByDoctor();
+        game.selectPersonIDByDoctor();
     }
 }
